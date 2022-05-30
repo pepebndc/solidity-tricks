@@ -19,7 +19,7 @@ contract TokenFactory {
 
         newTokenAddress = Clones.clone(implementationReference);
 
-        TokenImplementation newImplementation = TokenImplementation(implementationReference);
+        TokenImplementation newImplementation = TokenImplementation(newTokenAddress);
         newImplementation.initialize(name, symbol);
 
         emit newBirth(newTokenAddress);
